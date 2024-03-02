@@ -74,6 +74,11 @@ while True:
         time.sleep(2)
         pyautogui.hotkey('win', 'm')
     if(data.decode().strip()=="openRecentTab"):
+        print("recent tabs loading")
+        time.sleep(2)
         openrecent()
     if(data.decode().strip()=="lockScreen"):
-        pyautogui.hotkey('win', 'l')
+        print("locking")
+        time.sleep(2)
+        pyautogui.hotkey('alt', 'f4')
+        
