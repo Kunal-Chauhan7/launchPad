@@ -44,6 +44,16 @@ def send_msg():
         print(str(e))
 
 
+def openrecent():
+    time.sleep(2)
+    pyautogui.hotkey('win')
+    time.sleep(6)
+    pyautogui.write("chrome")
+    time.sleep(4)
+    pyautogui.press('enter')
+    time.sleep(4)
+    pyautogui.hotkey('ctrl', 'shift', 't')
+
 s = serial.Serial('COM6',9600)
 
 while True:
@@ -62,4 +72,8 @@ while True:
     if(data.decode().strip()=="hide"):
         print("hide!!")
         time.sleep(2)
-        pyautogui.hotkey('win', 'm')        
+        pyautogui.hotkey('win', 'm')
+    if(data.decode().strip()=="openRecentTab"):
+        openrecent()
+    if(data.decode().strip()=="lockScreen"):
+        pyautogui.hotkey('win', 'l')
